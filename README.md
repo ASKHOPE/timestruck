@@ -1,11 +1,5 @@
 # ⚡TimeStruck ⚡
 
-<p align="center">
-  <img src="./path//logo.png" alt="TimeStruck Logo" width="200"> <br/> <!-- Replace with your logo path -->
-  Stay focused, track progress, and conquer your goals with TimeStruck! 🚀
-</p>
-
-
 TimeStruck is a sleek and efficient web application designed to empower you in your journey towards effective time management. Whether you're tackling personal projects, organizing daily tasks, or aiming for long-term success, TimeStruck provides the essential tools and structure to maintain your momentum.
 
 ## ✨ Key Features
@@ -35,7 +29,7 @@ TimeStruck is a sleek and efficient web application designed to empower you in y
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/timestruck.git  # Replace with your repo URL
+   git clone https://github.com/ASKHOPE/timestruck
    cd timestruck
     ```
     
