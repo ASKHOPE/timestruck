@@ -30,7 +30,7 @@ export default function HomePage() {
 
   useEffect(() => {
     fetchTimezones();
-
+//local storage data retrieved
     const storedTimezone = localStorage.getItem("timezone");
     if (storedTimezone) {
       setLocalTimezone(storedTimezone);
@@ -43,7 +43,7 @@ export default function HomePage() {
 
     return () => clearInterval(intervalRef.current as NodeJS.Timeout);
   }, []);
-
+//get timezones from api
   const fetchTimezones = async () => {
     try {
       const data = await retry(async () => {
@@ -59,7 +59,7 @@ export default function HomePage() {
       setError(`Failed to fetch timezones: ${error.message}`);
     }
   };
-
+//time difference for calculations
   const formatTimeDifference = (diff: number): string => {
     const absDiff = Math.abs(diff);
     const seconds = Math.floor(absDiff / 1000) % 60;
@@ -77,7 +77,7 @@ export default function HomePage() {
 
     return diff < 0 ? `-${formattedDiff}` : formattedDiff;
   };
-
+//converts the time frmo one timezone to another
   const convertTime = async () => {
     setLoading(true);
     setError("");
@@ -115,7 +115,7 @@ export default function HomePage() {
       setLoading(false);
     }
   };
-
+//countdown function
   const startCountdownOrShowDifference = (targetTimeString: string) => {
     const targetTime = new Date(targetTimeString);
 
@@ -129,7 +129,7 @@ export default function HomePage() {
       setTimeUntil(formatTimeDifference(timeDiff));
     }, 1000);
   };
-
+//date and time parser for api request
   const formatDateTime = (dateTimeString: string, timezone: string) => {
     const date = new Date(dateTimeString);
     const optionsDate: Intl.DateTimeFormatOptions = {

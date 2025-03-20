@@ -53,11 +53,13 @@ export default function PreferencesPage() {
         return "system"; // Default to "system" if the stored value is invalid
       }
     });
+    //lanuage selector
     const storedLanguage = localStorage.getItem("language") || "en-US";
     setLanguage(storedLanguage);
 
     applyTheme(storedThemeValue); // Apply the theme on load
 
+    //gets timezone from localstorage and sets default if none
     fetchTimezones();
 
     const storedTime = localStorage.getItem("storedTime");
@@ -91,6 +93,7 @@ export default function PreferencesPage() {
     };
   }, []);
  
+  //theme engine to change themes
   const applyTheme = (selectedTheme: string) => {
     document.documentElement.classList.remove("light-theme", "dark-theme"); // Remove both classes first
     document.documentElement.classList.add(selectedTheme === "light" ? "light-theme" : "dark-theme");
@@ -106,7 +109,7 @@ export default function PreferencesPage() {
       if (timerId) clearInterval(timerId);
     };
   }, [timerId]);
-
+//fixes the conversion offset
   const startClockWithOffset = (fetchedDate: Date, timezone?: string) => {
     const offset = fetchedDate.getTime() - Date.now();
     setTimeOffset(offset);
@@ -131,7 +134,7 @@ export default function PreferencesPage() {
 
     localStorage.setItem("storedTime", fetchedDate.toISOString());
   };
-
+//gets time from local device
   const fetchDeviceTime = () => {
     setLoading(true);
     setFetchingStatus("Fetching device time...");
@@ -144,7 +147,7 @@ export default function PreferencesPage() {
     setFetchingStatus("Device time fetched ✅");
     setLoading(false);
   };
-
+//gets time zone from api
   const fetchTimezones = async () => {
     try {
       const data = await retry(async () => {
@@ -161,7 +164,7 @@ export default function PreferencesPage() {
       setFetchingStatus(`Failed to fetch timezones: ${error.message} ❌`);
     }
   };
-
+// gets time zone from ip adress and api
   const fetchNetworkTime = async () => {
     setLoading(true);
     setFetchingStatus("Fetching network time...");
@@ -206,7 +209,7 @@ export default function PreferencesPage() {
     }
   };
 
-
+//gets timezone from parsed data
   const fetchTimezoneTime = async (timezone: string) => {
     setLoading(true);
     setFetchingStatus("Fetching time for selected timezone...");
