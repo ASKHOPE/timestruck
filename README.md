@@ -22,7 +22,7 @@ TimeStruck is a sleek and efficient web application designed to empower you in y
 * **Tailwind CSS:**  A utility-first CSS framework that streamlines UI development, allowing for rapid prototyping and polished designs.
 * **TypeScript:**  A typed superset of JavaScript that enhances code maintainability, scalability, and overall development efficiency.
 * **TimeAPI.io:** A robust and dependable API for accessing timezone information and performing accurate timezone conversions. [https://timeapi.io/](https://timeapi.io/)
-* **Vercel:** The platform of choice for frontend frameworks and static sites, enabling seamless deployment and optimal performance. [Vercel Deployment URL Here]
+* **Vercel:** The platform of choice for frontend frameworks and static sites, enabling seamless deployment and optimal performance. [[Vercel Deployment URL Here](https://timestruck.vercel.app/)]
 
 ## 🛠️ Installation & Development
 
